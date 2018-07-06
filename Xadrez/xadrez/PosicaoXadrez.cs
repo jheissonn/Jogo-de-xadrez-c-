@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using tabuleiro;
 
-namespace tabuleiro
+namespace xadrez
 {
-    class Posicao
+    class PosicaoXadrez
     {
+        public char coluna { get; set; }
         public int linha { get; set; }
-        public int coluna { get; set; }
+        public PosicaoXadrez(char coluna, int linha)
+        {
+            this.coluna = coluna;
+            this.linha = linha;
 
-        public Posicao(int linha, int coluna)
-        {
-            this.linha = linha;
-            this.coluna = coluna;
-        }
-        public void defirnirValores(int linha, int coluna)
-        {
-            this.linha = linha;
-            this.coluna = coluna;
         }
         public override string ToString()
         {
-            return linha + ", " + coluna;
-
+            return "" + coluna + linha;
         }
+        public Posicao toPosicao() {
+
+            return new Posicao(8 - linha, coluna - 'a');
+        }
+
     }
 }
