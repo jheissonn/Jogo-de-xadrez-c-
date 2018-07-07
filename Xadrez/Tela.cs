@@ -22,11 +22,18 @@ namespace Xadrez
 
 
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-            if (partida.xeque)
-            { Console.Write("XEQUE!!!"); }
+            if (!partida.terminada)
+            {
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                if (partida.xeque)
+                { Console.Write("XEQUE!!"); }
 
-
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!!!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+            }
         }
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
